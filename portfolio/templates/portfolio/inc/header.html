@@ -1,0 +1,22 @@
+{% load static %}
+<nav id="topNav" class="navbar navbar-expand-md navbar-light">
+  <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'portfolio/logo3.jpg' %}" width="55" height="45" class="d-inline-block align-top" alt="NewFate Logo">
+        <span>NewFate</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Главная</a>
+            </li>
+            <li>
+                <a class="btn btn-primary" href="{% url 'blog:all_blogs' %}">Блог</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>

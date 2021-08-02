@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+
+    <h1>Мой блог</h1>
+    <br>
+
+    <h2>Всего статьей: {{ blogs.count }}</h2>
+
+    {% for blog in blogs %}
+    <a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none">
+        <h2 style="color: orange">
+            {{ blog.title }}
+        </h2>
+    </a>
+    <h5 style="color: blue">{{ blog.date|date:'j E Y' }}</h5>
+    <p>{{ blog.description|striptags|truncatechars:100  }}</p>
+    <hr>
+    {% endfor %}
+
+{% endblock %}
